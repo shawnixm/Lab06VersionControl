@@ -17,12 +17,13 @@ if __name__ == "__main__":
         print("1. Encode")
         print("2. Decode")
         print("3. Quit")
+        print()
         user_selection = int(input("Please enter an option: "))
         if user_selection == 1:
             user_password = input("Please enter your password to encode: ")
             password = encode(user_password)
-            print(password)
             print("Your password has been encoded and stored!")
+            print()
         if user_selection == 2:
             print(f"The encoded password is {password}, and the original password is .\n")
         if user_selection == 3:
