@@ -9,6 +9,17 @@ def encode(password):
         encoded_password += str(encoded_num)
     return encoded_password
 
+def decode(pw: str):
+    decoded = ""
+
+    for num in pw:
+        if (int(num) - 3 < 0):
+            decoded += str(10 + (int(num) - 3))
+        else:
+            decoded += str(int(num) - 3)
+
+    return decoded
+
 if __name__ == "__main__":
     password = ""
     while True:
@@ -25,6 +36,6 @@ if __name__ == "__main__":
             print("Your password has been encoded and stored!")
             print()
         if user_selection == 2:
-            print(f"The encoded password is {password}, and the original password is .\n")
+            print(f"The encoded password is {password}, and the original password is {decode(password)}.\n")
         if user_selection == 3:
             break
